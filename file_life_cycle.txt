@@ -13,3 +13,4 @@ E assim que for feito o commit, que é criar a versão, esse hash#, depois de co
 
 commit = criar uma versão,'um snapshot' do projeto naquele momento...
 
+
