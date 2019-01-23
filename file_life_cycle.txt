@@ -10,3 +10,6 @@ staged: depois de modificado, podemos adicionar o arquivo a uma área onde será
 E assim que for feito o commit, que é criar a versão, esse hash#, depois de commitado, ele passa a ser novamente 'Unmodified'. Ou seja, nada foi modificado desde a última versão criada...
 
 
+
+commit = criar uma versão,'um snapshot' do projeto naquele momento...
+
