@@ -61,3 +61,38 @@ git reset --soft hash_do_commit = volta os para o estado de staged...pronto para
 git reset --mixed hash_do_commit = volta os arquivos para antes do staged, ou seja modified...
 git reset --hard hash_do_commit = ele volta e mata todos os commits...antes do hash selecionado...é muito perigoso utilizar o reset hard...tomar muito cuidado...
 
+
+# CRIANDO E GERENCIANDO REPOSITÓRIOS:
+- PARA CRIAR REPOSITÓRIOS REMOTOS NA LINHA DE COMANDO:
+
+cho "# git-github-course" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/ricardofelixmont/git-github-course.git
+git push -u origin master
+
+# OU SUBA UM REPOSITÓRIO EXISTENTE PELA LINHA DE COMANDO:
+
+git remote add origin https://github.com/ricardofelixmont/git-github-course.git
+git push -u origin master
+
+
+# comandos:
+git remote = motra os diretorios remotos...
+git remote -v = mostra mais informações sobre os diretorios remotos, como o endereço...
+git push -u origin master = move as minhas versoes locais para o repositório remoto...o -u serve para trackear o comando, quer dizer que na proxima vez que quiser da git push nao preciso mais escrever tudo, posso usar apenas 'git push' ao inves de 'git push orign master'
+
+
+# Enviando Versões para o Repositorio Remoto...
+git push origin <nome_da_branch>
+git clone <link_do_repositorio> <nome_do_diretorio_> = clona um repositorio remoto...
+
+
+# Fazendo fork de um projeto:
+Fork faz uma cópia do projeto de alguem para trabalhar nele e depois mandar um request para o dono
+do projeto solicitando a alteração...ou seja para que possamos contribuir em um projeto que não é nosso
+A diferença entre o fork e o clone é: git clone só consigo fazer para repositorios que sao meu de fato, e depois quero mandar as modificações para o git hub... no repositorio de outras pessoas eu posso até clonar, porém não vou conseguir enviar modificações nem requests pois nao teremos permissão.
+
+
+
