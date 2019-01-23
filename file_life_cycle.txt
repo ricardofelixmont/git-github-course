@@ -10,7 +10,54 @@ staged: depois de modificado, podemos adicionar o arquivo a uma área onde será
 E assim que for feito o commit, que é criar a versão, esse hash#, depois de commitado, ele passa a ser novamente 'Unmodified'. Ou seja, nada foi modificado desde a última versão criada...
 
 
+# Comando mais importantes:
+git init = inicializa um repositorio git no diretorio atual
+git status = mostra o status dos arquivos do repositorio git
+git add <nome_do_arquivo> = adiciona o arquivo do 'modified' status para o 'staged'
+git add * = adiciona todos os arquivos do 'modified' status para o 'staged'
+commit = criar uma versão,'um snapshot' do projeto naquele momento...e volta para o 'unmodified'
 
-commit = criar uma versão,'um snapshot' do projeto naquele momento...
+git log = mostra informações sobre os commits...
+git log --decorate = mostra mais informações que apenas git log
+git log --autor="Nome_do_autor" = mostra as informações apenas daquele autor...
+git shortlog = mostra em ordem alfabetica, quais foram os autores, quantos commits fizeram e quais foram...
+git shortlog -sn = mostra a quantidade de commits e o nome do autor...
+git log --graph = mostra de forma grafica o que esta acontecendo com o branchs e as versões...
 
+# Todo commit tem uma hash que é mostrado no git log:
+eles tem o seguinte formato: 4cc72ce979f81e348ab60a460c4385fd39dac5a5
+Por exemplo: Digitamos git log no terminal no exemplo abaixo:
+
+ricardo@ricardo-desktop:~/git-github-course$ git log
+commit 876893fb752abe775f8c4433a745d181d2333b5b (HEAD -> master)
+Author: Ricardo Felix <ricardofelix_mont@outlook.com>
+Date:   Wed Jan 23 19:24:50 2019 -0200
+
+    Second commit
+
+commit 4cc72ce979f81e348ab60a460c4385fd39dac5a5
+Author: Ricardo Felix <ricardofelix_mont@outlook.com>
+Date:   Wed Jan 23 19:18:42 2019 -0200
+
+    First Commit
+
+# Acima vimos a hash(identificação unica do commit) 
+
+git show <hash_do_commit> = mostra todas as informações do commit passado como argumento...
+git diff = antes de fazer o git add e commmit, é sempre bom mostrar o git dif...ele mostra todas as informações do que vai ser commitado...
+git diff --name-only = mostra somente o nome do arquivo que foi modificado...se temos uma lista grande de arquivos modificados, com o name-only podemos ver essa lista sem um log grande com todas as diferenças...
+git commit -am "Mensagem" = faz o git add e o commit ao mesmo tempo...(move para o stage e cria a versão)...
+
+
+
+# Desfazendo alterações:
+git checkout <nome_do_arquivo> = ele retorna o arquivo até o ultimo estado salvo...desfaz as ultimas lterações...
+
+git reset HEAD Nome_do_arquivo = se depois de dar git add quisermos tirar o arquivo do 'staged' status, é só digitar o comando git reset HEAD file_name... que ele volta para podermos fazer alterações...
+
+
+
+git reset --soft hash_do_commit = volta os para o estado de staged...pronto para dar o commit de novo...é importante ressaltar que colocamos a hash que é colocada nao é alterada, somente commits anteriores a hash escolhida serão retornados para o staged, o mesmo acontece para os outros resets abaixo...
+git reset --mixed hash_do_commit = volta os arquivos para antes do staged, ou seja modified...
+git reset --hard hash_do_commit = ele volta e mata todos os commits...antes do hash selecionado...é muito perigoso utilizar o reset hard...tomar muito cuidado...
 
