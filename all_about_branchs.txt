@@ -1,0 +1,58 @@
+O que é um branch?
+É um ponteiro móvel que leva a um commit.
+
+
+Quando criamos um repositório o primeiro branch que é criado é o 'master' e esse branch segue os
+commits que fizemos nele...
+
+Porém podemos criar novos branchs, e esses branchs podem apontar para os mesmos commits do 'master' ou de algum outro.
+
+
+Por que usar Branchs?
+Vantagens: 
+1. Podemos modificar os arquivos sem alterar o local principal(master)
+2. Facilmente 'desligavel', ou seja, posso apagar branchs e modificar muito rapidamente...
+3. Múltiplas pessoas trabalhando em diferentes branchs sem ninguem atrapalhar ninguem.
+4. Evita conflitos, pois estamos trabalhando em locais diferentes, com poucos contribuintes do branch
+
+
+# CRIANDO UM BRANCH:
+git checkout -b nome_do_branch = cria um branch novo com o nome passado como argumento...e ja entra no branch
+git branch = mostra os branchs existentes, e mostra qual o branch que estamos no momento com um (*)
+git checkout nome_do_branch = acessa o branch selecionado
+git branch -D nome_do_branch = deleta o branch selecionado
+
+
+# ENTENDENDO O MERGE
+Depois de fazer alterações nos branchs, precisamos unir os branchs que modificamos ao master.
+
+Para unir branchs, existem dois métodos importantes, o Merge e o Rebase. Os dois fazer basicamente a mesma coisa, unir branchs, porém de formas totalmente diferentes.
+
+Passo a Passo do Merge:
+Preciso criar um novo commit para unir dois branchs, no caso master e um branch de trabalho
+Pros:
+1. Merge não é uma operação destrutiva, nao vai movimentar o historico e mecher nele.
+2. O contra é que precisamos de um commit extra. Esse commit nao muda nada, ele só serve para fazer o merge.
+3. Histórico poluído. Quando criamos o merge, ele cria uma arvore juntando os commits em um commit só. Isso dificulta para ler se tivermos muitos branchs, fica complicado de entender.
+
+# ENTENDENDO O REBASE
+Rebase é um pouco mais simples que o merge.
+O rebase pega o commit do branch de trabalho e coloca ele na frente do commit do master deixando tudo linear. O commit do branch de trabalho que existia antes é apagado e só fica uma cópia dele na frente do master, e o branch de trabalho continua apontando para ele. Assim tanto o branch de trabalho e o master vao apontar para o mesmo commit. 
+Isso faz com que nao tenhamos a poluição do 'merge'
+
+Pros:
+1. Evita commits extras
+2. Histórico Linear
+
+Contra:
+1. Perco a ordem cronológica, pois colocamos um commit feito antes no inicio da fila(como sendo o ultimo commit), temos que tomar cuidado, se alterarmos o historico e outra pessoa estiver trabalhando no mesmo branch, vai haver conflito se esta pessoa for enviar alterações pois o historico está diferente. Rebase precisa usar com muita cautela. 
+
+
+Para fazer um Merge no master: temos que estar no master...
+git merge nome_do_branch
+
+Para fazer um rebase no master: temos que estar no master
+git rebase nome_do_branch
+
+
+Conclusão = É muito melhor utilizar o Rebase sempre que possível...
