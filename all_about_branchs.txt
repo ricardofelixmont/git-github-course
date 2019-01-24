@@ -56,3 +56,5 @@ git rebase nome_do_branch
 
 
 Conclusão = É muito melhor utilizar o Rebase sempre que possível...
+
+

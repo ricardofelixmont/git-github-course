@@ -1,0 +1,18 @@
+arquivo .gitignore = serve para ignorar arquivos, lista de arquivos que nao serao rastreados pelo git
+
+git stash = vamos supor que fizemos alterações em algum arquivo e esquecemos de dar um pull antes...
+Podemos usar o git stash para salvar essas alterações em um arquivo e ela vai sumir do nosso git por enquanto, dai podemos dar git pull e depois podemos utilizar git stash apply para que as alterações salvas possam voltar para o branch atual.
+
+git stash = guarda as alterações atuais fora do alcance do git...
+git stash apply = aplica as mudanças no branch atual...
+git stash list = lista todos os stashs 
+
+
+
+# Versionando com TAGS:
+Cria versões de releases. Vai ficar bem separado no gitHub:
+
+git tag <n° versão> -m "Mensagem"
+git tag -1.0.0 -m "Descrição da versão"
+
+git revert
