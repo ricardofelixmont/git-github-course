@@ -13,6 +13,18 @@ git stash list = lista todos os stashs
 Cria versões de releases. Vai ficar bem separado no gitHub:
 
 git tag <n° versão> -m "Mensagem"
-git tag -1.0.0 -m "Descrição da versão"
+git tag -a 1.0.0 -m "Descrição da versão"
 
-git revert
+
+
+# GIT REVERT
+Suponhamos que eu estou trabalhando em um sistema grande e subi uma alteração que quebrou o sistema...é sexta feira e quero ir embora =D, eu poderia dar um git reset porem eu o codigo que eu fiz esta no caminho certo, é mais ou menos aquilo que eu quero, só preciso encontrar o erro. É para isso que serve o reverte. Para que eu nao perca do meu historico as mudanças que eu fiz.
+
+
+
+# Como apagar tags e Branchs em repositórios remotos:
+git tag -d 1.0.0 = deleta a tag no repositorio local, porém nao apaga a tag no remoto.
+git push origin :1.0.0 = ele apaga no repositorio remoto.
+
+O mesmo posso fazer com um branch:
+git push origin :nome_branch
