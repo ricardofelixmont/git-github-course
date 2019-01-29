@@ -57,4 +57,18 @@ git rebase nome_do_branch
 
 Conclusão = É muito melhor utilizar o Rebase sempre que possível...
 
+# Criando branchs remotas(release, hologation...)
+
+Criar uma branch local com nome release: git chekcout -b release
+Enviar a branch para o repositório remoto: git push origin release
+
+- Com a branch remota criada, agora outros contribuidores podem acessar a branch release:
+Mas para isso precisam rastrea-la localmente
+git checkout --track origin/release
+git pull
+
+pronto, agora a branch release está disponivel para alteração
+
+mais informações em https://stackoverflow.com/questions/9537392/git-fetch-remote-branch
+
 
