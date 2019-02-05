@@ -65,7 +65,7 @@ git reset --hard hash_do_commit = ele volta e mata todos os commits...antes do h
 # CRIANDO E GERENCIANDO REPOSITÓRIOS:
 - PARA CRIAR REPOSITÓRIOS REMOTOS NA LINHA DE COMANDO:
 
-cho "# git-github-course" >> README.md
+echo "# git-github-course" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
